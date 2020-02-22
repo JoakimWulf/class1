@@ -54,7 +54,7 @@ function showJoakimDemo() {
             
             } 
             ctx.rect(x, y, boxsize, boxsize);
-                break;
+            break;
              
         default:
             ctx.rect(10, 10, boxsize, boxsize);
