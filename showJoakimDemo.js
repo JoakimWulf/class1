@@ -1,7 +1,7 @@
 
 function showJoakimDemo() {
     var page = getPageFromURL();
-    var boxsize = 20 ;
+    var boxsize = 50 ;
     var c = document.getElementById("joakimCanvas");
     var ctx = c.getContext("2d");
 
@@ -43,10 +43,19 @@ function showJoakimDemo() {
             }
         break ;
 
-        case 99:
+        case 3:
+            ctx.rect(100, 100, boxsize, boxsize);
+            var x = Math.floor(Math.random() * (c.height-boxsize));
+            var y = Math.floor(Math.random() * (c.width-boxsize));
+            if ((y>100) && (y<100+boxsize) && (x>100) && (x<100+boxsize)) {
+                ctx.strokeStyle="#FF0000";
+            } else { 
+                ctx.strokeStyle="#000000";
             
-            break;
-
+            } 
+            ctx.rect(x, y, boxsize, boxsize);
+                break;
+             
         default:
             ctx.rect(10, 10, boxsize, boxsize);
     }
