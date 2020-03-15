@@ -1,7 +1,7 @@
 
 function showJoakimDemo() {
     var page = getPageFromURL();
-    var boxsize = 50 ;
+    var boxsize = 100 ;
     var c = document.getElementById("joakimCanvas");
     var ctx = c.getContext("2d");
 
@@ -32,7 +32,7 @@ function showJoakimDemo() {
             for (i = 0; i < numberOfRectangles; i++) {
                 x[i] = Math.floor(Math.random() * (c.height-boxsize));
                 y[i] = Math.floor(Math.random() * (c.width-boxsize));
-                if ((y[i]>100) && (y[i]<200) && (x[i]>100) && (x[i]<200)) {
+                if ((y[i]>y0) && (y[i]<200) && (x[i]>x0) && (x[i]<200)) {
                 } else { 
                     i--;
                 }
@@ -44,10 +44,23 @@ function showJoakimDemo() {
         break ;
 
         case 3:
-            ctx.rect(100, 100, boxsize, boxsize);
+            
+            var x0 = Math.floor(Math.random() * (c.height-boxsize));
+            var y0 = Math.floor(Math.random() * (c.width-boxsize));
+            ctx.rect(x0, y0, boxsize, boxsize);
             var x = Math.floor(Math.random() * (c.height-boxsize));
             var y = Math.floor(Math.random() * (c.width-boxsize));
-            if ((y>100) && (y<100+boxsize) && (x>100) && (x<100+boxsize)) {
+            if (y>y0 && y<y0+boxsize 
+                && x>x0 && x<x0+boxsize) {
+                ctx.strokeStyle="#FF0000";
+            } else if (y>y0 && y<y0+boxsize 
+                && x>x0-boxsize && x<x0) {
+                ctx.strokeStyle="#FF0000";
+            } else if (y>y0-boxsize && y<y0 
+                && x>x0 && x<x0+boxsize) {
+                ctx.strokeStyle="#FF0000";
+            } else if (y>y0-boxsize && y<y0 
+                && x>x0-boxsize && x<x0) {
                 ctx.strokeStyle="#FF0000";
             } else { 
                 ctx.strokeStyle="#000000";
