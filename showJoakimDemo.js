@@ -1,4 +1,3 @@
-
 function showJoakimDemo() {
     var page = getPageFromURL();
     var boxsize = 20 ;
@@ -47,10 +46,6 @@ function showJoakimDemo() {
                         
             tegnAlleRektangler(ctx, boxsize);
         break ;
-
-        case 99:
-            
-            break;
 
         default:
             ctx.rect(10, 10, boxsize, boxsize);
