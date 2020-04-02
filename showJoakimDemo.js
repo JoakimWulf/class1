@@ -37,10 +37,15 @@ function showJoakimDemo() {
                     i--;
                 }
             }
-            
-            for (i=0; i<numberOfRectangles;i++) {
-                ctx.rect(x[i],y[i], boxsize, boxsize);
+
+            function tegnAlleRektangler(ctx, boxsize) {
+                for (i=0; i<x.length; i++) {
+                    console.log(i);
+                    ctx.rect(x[i], y[i], boxsize, boxsize);
+                } 
             }
+                        
+            tegnAlleRektangler(ctx, boxsize);
         break ;
 
         case 99:
