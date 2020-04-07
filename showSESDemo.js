@@ -214,7 +214,7 @@ function showSESDemo() {
             break;
 
         case 5:
-
+            
             for (i=0; i<PeopleDiagram.length; i++) {
                 var soegle = PeopleDiagram[i];
                 // Tegn de døde som sort rect i y=0
@@ -228,7 +228,12 @@ function showSESDemo() {
                     ctx.strokeRect(i*10, c.height-(soegle[DOEDE]+soegle[SYGE])*10, 10, soegle[SYGE]*10);
                 }
 
-                // Tegn de immune som sorte rect i y=døde+syge
+                // Tegn de immune som grøn rect i y=døde+syge
+                if (soegle[IMMUNE] != 0) {
+                    ctx.strokeStyle = "#008000"; //red
+                    ctx.strokeRect(i*10, c.height-(soegle[DOEDE]+soegle[SYGE]+soegle[IMMUNE])*10, 10, soegle[IMMUNE]*10);
+                }
+
                 // De raske er hvide, så der tegner vi ikke noget
             }
 
