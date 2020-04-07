@@ -185,8 +185,10 @@ function showSESDemo() {
                             }
                         }
                     }
-                    person.moveRandom(moveSize);
-                    person.liveOrDie(DayCounter);
+                    if (person.infected !=DECEASED) {
+                        person.moveRandom(moveSize);
+                        person.liveOrDie(DayCounter);
+                    }
                 }
             }
 
